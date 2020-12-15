@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="测试套件">
+    <test name="login">
+        <classes>
+            <class name="com.yueniu.cases.LoginCase"></class>
+            <class name="com.yueniu.cases.DuanXianBaoCase"></class>
+        </classes>
+    </test>
+
+    <listeners>
+        <listener class-name="com.yueniu.config.ExtentTestNGIReporterListener"></listener>
+    </listeners>
+</suite>
