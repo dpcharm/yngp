@@ -184,4 +184,9 @@ public class LoginCase extends BaseCase {
         Assert.assertEquals(status,1,"涨停分析status期望值与实际值不一致");
     }
 
+    public void te(){
+
+    }
+
+
 }
