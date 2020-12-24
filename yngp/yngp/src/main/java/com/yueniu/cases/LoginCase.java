@@ -184,24 +184,12 @@ public class LoginCase extends BaseCase {
         Assert.assertEquals(status,2,"涨停分析status期望值与实际值不一致");
     }
 
-    public void te(){
+    public void tt(){
+        System.out.println("1222222");
+        System.out.println("1222222");
 
-        System.out.println("12321312313");
-        System.out.println("12321312313");
-        System.out.println("12321312313");
-        System.out.println("12321312313");
-        System.out.println("12321312313");
-        System.out.println("12321312313");
-        System.out.println("12321312313");
-        System.out.println("12321312313");
-        System.out.println("12321312313");
-        System.out.println("12321312313");
-        System.out.println("12321312313");
-        System.out.println("12321312313");
-        System.out.println("12321312313");
-        System.out.println("12321312313");
-        System.out.println("12321312313");
+        System.out.println("1222222");
+        System.out.println("1222222");
     }
-
 
 }
