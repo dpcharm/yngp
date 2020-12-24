@@ -164,7 +164,7 @@ public class LoginCase extends BaseCase {
         JSONObject json = JSON.parseObject(responseString);
         System.out.println(json);
         Object status = json.get("status");
-        Assert.assertEquals(status,1,"涨停分析status期望值与实际值不一致");
+        Assert.assertEquals(status,2,"涨停分析status期望值与实际值不一致");
     }
 
     /**
