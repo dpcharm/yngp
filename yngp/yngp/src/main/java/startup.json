@@ -1,0 +1,125 @@
+//localhost:8888/demo
+[
+  {
+    "description": "这是第一个mock例子",
+    "request":{
+      "uri": "/demo"
+    },
+    "response": {
+      "text": "第一个mock框架的demo"
+    }
+  },
+
+  {
+    "description": "模拟一个没有带参数的get请求",
+    "request":{
+      "uri": "/getdemo",
+      "method": "get"
+    },
+    "response": {
+      "text": "这是一个没有参数的get请求"
+    }
+  },
+
+  {
+    "description": "模拟一个带参数的get请求",
+    "request":{
+      "uri": "/getWithParam",
+      "method": "get",
+      "queries": {
+        "name": "huhansan",
+        "age": "18"
+      }
+    },
+    "response": {
+      "text": "我胡汉三又回来啦！！！！"
+    }
+  },
+
+  {
+    "description": "模拟一个post请求",
+    "request":{
+      "uri": "/postDemo",
+      "method": "post"
+    },
+    "response": {
+      "text": "第一个post请求！！！！"
+    }
+  },
+
+  {
+    "description": "模拟一个带参数的post请求",
+    "request":{
+      "uri": "/postWithParam",
+      "method": "post",
+      "forms": {
+        "name": "huhansan",
+        "sex": "man"
+      }
+
+    },
+    "response": {
+      "text": "胡汉三带着参数来了！！！！"
+    }
+  }
+  //带cookies信息的get请求
+  {
+    "description": "这是第一个带cookies信息的get请求",
+    "request":{
+      "uri": "/get/with/cookies",
+      "method": "get",
+      "cookies": {
+        "login": "true"
+      }
+    },
+    "response": {
+      "text": "这是第一个需要带cookies信息的get请求"
+    }
+  },
+
+  //带cookies信息的post请求
+  {
+    "description": "这是第一个带cookies信息的post请求",
+    "request":{
+      "uri": "/post/with/cookies",
+      "method": "post",
+      "cookies": {
+        "login": "true"
+      }
+    },
+    "json": {
+      "name": "huhansan",
+      "age": "12"
+    },
+    "response": {
+      "status": 200,
+      "json": {
+        "huhansan": "success",
+        "status": "1"
+      }
+    }
+  },
+
+  //带header信息的post请求
+  {
+    "description": "这是第一个带header信息的post请求",
+    "request":{
+      "uri": "/post/with/headers",
+      "method": "post",
+      "headers": {
+        "content-type": "application/json"
+      },
+      "queries": {
+        "name": "zzj",
+        "age": "18"
+      }
+    },
+    "response": {
+      "status": 200,
+      "json": {
+        "huhansan": "success",
+        "status": "1"
+      }
+    }
+  }
+  ]
