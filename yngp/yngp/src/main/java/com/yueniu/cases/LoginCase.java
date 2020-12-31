@@ -3,6 +3,7 @@ package com.yueniu.cases;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.yueniu.common.BaseCase;
+import com.yueniu.common.GlobalVariable;
 import com.yueniu.model.User;
 import com.yueniu.service.LoginService;
 import com.yueniu.utils.RestClient;
@@ -24,9 +25,18 @@ import java.util.ResourceBundle;
 public class LoginCase extends BaseCase {
 
     ResourceBundle bundle;
-    public String centralToken;
+
+//    public static String centralToken;
     @Resource
     private LoginService loginService;
+
+//    public static String getCentralToken() {
+//        return centralToken;
+//    }
+//
+//    public static void setCentralToken(String centralToken) {
+//        LoginCase.centralToken = centralToken;
+//    }
 
     /**
      * 登录
@@ -58,7 +68,8 @@ public class LoginCase extends BaseCase {
                 CloseableHttpResponse response = RestClient.post(url, entityString, headerMap);
                 stringResponse = EntityUtils.toString(response.getEntity(), "utf-8");
                 JSONObject json = JSON.parseObject(stringResponse);
-                centralToken = (String) json.getJSONObject("data").get("centralToken");
+                String centralToken = (String) json.getJSONObject("data").get("centralToken");
+                GlobalVariable.CENTRAL_TOKEN = centralToken;
                 //将centralToken存入数据库
                 Integer result = loginService.addCentralTokenToUser(centralToken);
                 if (result != 1){
@@ -164,7 +175,7 @@ public class LoginCase extends BaseCase {
         JSONObject json = JSON.parseObject(responseString);
         System.out.println(json);
         Object status = json.get("status");
-        Assert.assertEquals(status,8,"涨停分析status期望值与实际值不一致");
+        Assert.assertEquals(status,1,"涨停分析status期望值与实际值不一致");
     }
 
     /**
@@ -181,7 +192,7 @@ public class LoginCase extends BaseCase {
         JSONObject json = JSON.parseObject(responseString);
         System.out.println(json);
         Object status = json.get("status");
-        Assert.assertEquals(status,2,"涨停分析status期望值与实际值不一致");
+        Assert.assertEquals(status,1,"涨停分析status期望值与实际值不一致");
     }
 
     public void tt(){

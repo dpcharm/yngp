@@ -3,14 +3,12 @@
 <suite name="测试套件">
     <test name="login">
         <classes>
-            <class name="com.yueniu.cases.LoginCase"></class>
-            <class name="com.yueniu.cases.DuanXianBaoCase"></class>
-            <class name="com.yueniu.cases.test">
+            <class name="com.yueniu.auto.YNGPHT">
                 <methods>
-                    <include name="mai"></include>
+                    <include name="login"></include>
+                    <include name="addSharesToStrategy"></include>
                 </methods>
             </class>
-
         </classes>
     </test>
 
